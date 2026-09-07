@@ -1,0 +1,146 @@
+---
+// src/components/Header.astro
+const navLinks = [
+  { label: 'Inicio', href: '#inicio', active: true },
+  { label: 'Nosotros', href: '#nosotros' },
+  { label: 'Certificaciones (BPA/BPDT)', href: '#certificaciones' },
+  { label: 'Catálogo Farmacéutico', href: '#catalogo' },
+  { label: 'Trabaja con Nosotros', href: '#contacto' },
+];
+---
+
+<header class="fixed top-0 w-full z-50 shadow-[0_1px_8px_rgba(11,28,48,0.06)]" id="header-nav">
+  <!-- Top Announcement Bar -->
+  <div class="bg-inverse-surface text-inverse-on-surface py-space-xs">
+    <div class="max-w-7xl mx-auto px-container-padding-desktop flex flex-wrap items-center justify-between gap-space-sm">
+      <div class="flex items-center gap-space-lg">
+        <div class="flex items-center gap-space-xs text-body-sm">
+          <span class="material-symbols-outlined text-inverse-primary text-[10px]">schedule</span>
+          <span>Lun - Sáb: 7:30 AM - 7:00 PM</span>
+        </div>
+        <div class="hidden md:flex items-center gap-space-xs text-body-sm">
+          <span class="material-symbols-outlined text-inverse-primary text-[10px]">call</span>
+          <span>Central Pedidos: (01) 748-3900 / +51 984 210 330</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-space-md">
+        <span class="inline-flex items-center gap-space-xs bg-tertiary-container text-on-tertiary-container px-space-sm py-1.5 rounded-full text-label-sm uppercase tracking-wider font-bold">
+          Certificados por DIGEMID (BPA / BPDT)
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <div class="bg-surface/90 backdrop-blur-xl border-b border-surface-dim/40">
+    <div class="h-20 max-w-7xl mx-auto px-container-padding-desktop flex items-center justify-between gap-space-md">
+      <!-- Brand Logo -->
+      <a href="#inicio">
+        <img
+          src="/images/brand/logo-alt.png"
+          alt="Grupo Dialex"
+          class="h-8 w-full object-contain sm:h-5.25"
+        />
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-space-lg">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'py-space-xs transition-colors',
+              link.active
+                ? 'text-primary font-bold'
+                : 'text-label-lg text-on-surface-variant hover:text-primary font-medium'
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Desktop CTAs & Mobile Hamburger -->
+      <div class="flex items-center gap-space-md">
+        <a
+          href="https://wa.me/51984210330?text=Hola%20Grupo%20Dialex,%20deseo%20hacer%20un%20pedido%20B2B"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden sm:inline-flex items-center gap-space-xs bg-primary text-on-tertiary hover:bg-tertiary-container hover:text-on-tertiary-container px-space-md py-2.5 rounded-lg text-label-lg font-bold transition-all shadow-sm"
+        >
+          <span>Haz tu Pedido</span>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          type="button"
+          aria-label="Abrir menú de navegación"
+          class="lg:hidden p-2 text-on-surface hover:text-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+        >
+          <span class="material-symbols-outlined text-[28px]" id="menu-icon">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-surface-container bg-surface px-container-padding-mobile py-space-md">
+      <nav class="flex flex-col gap-space-sm">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'px-space-sm py-2 rounded-lg transition-colors',
+              link.active
+                ? 'bg-surface-container text-primary font-bold'
+                : 'text-on-surface-variant hover:bg-surface-container-low hover:text-primary font-medium'
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+        <div class="pt-space-xs border-t border-surface-dim/40 flex flex-col gap-2">
+          <a
+            href="https://wa.me/51984210330?text=Hola%20Grupo%20Dialex,%20deseo%20hacer%20un%20pedido%20B2B"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center justify-center gap-space-xs bg-primary text-on-tertiary py-2.5 rounded-lg text-label-lg font-bold"
+          >
+            <span>Haz tu Pedido</span>
+          </a>
+          <div class="flex items-center gap-2 px-space-sm py-1 text-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-[18px]">call</span>
+            <span>(01) 748-3900 / +51 984 210 330</span>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('menu-icon');
+
+  if (button && menu && icon) {
+    button.addEventListener('click', () => {
+      const isHidden = menu.classList.contains('hidden');
+      if (isHidden) {
+        menu.classList.remove('hidden');
+        icon.textContent = 'close';
+      } else {
+        menu.classList.add('hidden');
+        icon.textContent = 'menu';
+      }
+    });
+
+    // Close mobile menu when clicking navigation link
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        icon.textContent = 'menu';
+      });
+    });
+  }
+</script>

@@ -1,0 +1,161 @@
+---
+// src/components/QuoteForm.astro
+---
+
+<section class="max-w-7xl mx-auto px-container-padding-desktop py-space-3xl" id="cotizacion-b2b">
+  <div class="rounded-3xl bg-gradient-to-br from-inverse-surface via-primary to-primary-container p-space-xl lg:p-space-3xl text-on-primary shadow-xl">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
+      <!-- Left Column: Copy & Direct Hotline -->
+      <div class="lg:col-span-6 flex flex-col gap-space-md">
+        <span class="inline-flex items-center gap-1 self-start px-space-sm py-1 rounded-full bg-surface-container-lowest/15 backdrop-blur-sm text-surface-container-highest text-label-sm uppercase tracking-wider font-bold">
+          Atención Comercial Inmediata
+        </span>
+        <h2 class="text-headline-xl font-bold leading-tight">
+          ¿Quieres mantener tu botica siempre abastecida con total tranquilidad?
+        </h2>
+        <p class="text-body-lg text-surface-container-highest/90 leading-relaxed">
+          Completa tus datos comerciales y un Asesor Mayorista se comunicará en menos de 15 minutos con nuestro catálogo de precios preferenciales y promociones de la semana.
+        </p>
+
+        <div class="flex flex-col gap-space-sm pt-space-xs text-body-md text-surface-container-lowest">
+          <div class="flex items-center gap-space-sm">
+            <div class="w-9 h-9 rounded-lg bg-surface-container-lowest/15 flex items-center justify-center text-inverse-primary shrink-0">
+              <span class="material-symbols-outlined text-[18px]">call</span>
+            </div>
+            <span>Central Telefónica: (01) 748-3900 / (01) 748-3901</span>
+          </div>
+
+          <div class="flex items-center gap-space-sm">
+            <div class="w-9 h-9 rounded-lg bg-surface-container-lowest/15 flex items-center justify-center text-inverse-primary shrink-0">
+              <span class="material-symbols-outlined text-[18px]">mail</span>
+            </div>
+            <span>ventas@grupodialex.com.pe</span>
+          </div>
+
+          <div class="flex items-center gap-space-sm">
+            <div class="w-9 h-9 rounded-lg bg-surface-container-lowest/15 flex items-center justify-center text-tertiary-fixed shrink-0">
+              <span class="material-symbols-outlined text-[18px]">chat</span>
+            </div>
+            <span>WhatsApp Directo: +51 984 210 330</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: B2B Quick Quote Form -->
+      <div class="lg:col-span-6 bg-surface-container-lowest rounded-2xl p-space-xl text-on-surface shadow-lg">
+        <h3 class="text-headline-sm font-bold text-on-surface mb-1">Solicita tu Cotización B2B</h3>
+        <p class="text-body-sm text-on-surface-variant mb-space-md">Acceso directo a listas mayoristas con RUC.</p>
+
+        <form class="space-y-space-sm" id="b2b-quote-form">
+          <div>
+            <label for="company_name" class="block text-label-md text-on-surface font-semibold mb-1">
+              Nombre de la Botica o Razón Social
+            </label>
+            <input
+              id="company_name"
+              name="company_name"
+              class="w-full px-space-md py-2.5 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline text-body-md focus:outline-none focus:ring-2 focus:ring-primary border border-surface-container-high/50"
+              placeholder="Ej: Botica Santa Rosa S.A.C."
+              required
+              type="text"
+            />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+            <div>
+              <label for="ruc" class="block text-label-md text-on-surface font-semibold mb-1">
+                RUC (11 dígitos)
+              </label>
+              <input
+                id="ruc"
+                name="ruc"
+                class="w-full px-space-md py-2.5 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline text-body-md focus:outline-none focus:ring-2 focus:ring-primary font-mono border border-surface-container-high/50"
+                maxlength="11"
+                pattern="[0-9]{11}"
+                title="Debe ingresar un RUC válido de 11 dígitos"
+                placeholder="20603847291"
+                required
+                type="text"
+              />
+            </div>
+            <div>
+              <label for="phone" class="block text-label-md text-on-surface font-semibold mb-1">
+                Teléfono / WhatsApp
+              </label>
+              <input
+                id="phone"
+                name="phone"
+                class="w-full px-space-md py-2.5 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline text-body-md focus:outline-none focus:ring-2 focus:ring-primary border border-surface-container-high/50"
+                placeholder="987 654 321"
+                required
+                type="tel"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="location" class="block text-label-md text-on-surface font-semibold mb-1">
+              Distrito / Ciudad y Región
+            </label>
+            <input
+              id="location"
+              name="location"
+              class="w-full px-space-md py-2.5 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline text-body-md focus:outline-none focus:ring-2 focus:ring-primary border border-surface-container-high/50"
+              placeholder="Ej: San Juan de Lurigancho, Lima"
+              required
+              type="text"
+            />
+          </div>
+
+          <div>
+            <label for="interest" class="block text-label-md text-on-surface font-semibold mb-1">
+              Línea o Productos de Interés Principal
+            </label>
+            <select
+              id="interest"
+              name="interest"
+              class="w-full px-space-md py-2.5 rounded-lg bg-surface-container-low text-on-surface text-body-md focus:outline-none focus:ring-2 focus:ring-primary border border-surface-container-high/50"
+            >
+              <option value="genericos">Medicamentos Genéricos &amp; Éticos</option>
+              <option value="respiratorio">Línea Respiratoria &amp; Antibióticos</option>
+              <option value="materno">Línea Pediátrica &amp; Materno Infantil</option>
+              <option value="descartables">Insumos Médicos &amp; Descartables</option>
+              <option value="completo">Catálogo Mayorista Completo</option>
+            </select>
+          </div>
+
+          <button
+            class="w-full mt-space-sm inline-flex items-center justify-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary py-3 rounded-lg text-label-lg font-bold transition-all shadow-md hover:shadow-lg cursor-pointer"
+            type="submit"
+          >
+            <span class="material-symbols-outlined text-[20px]">send</span>
+            <span>Enviar Requerimiento a Ventas</span>
+          </button>
+
+          <div
+            class="hidden p-space-sm bg-tertiary-container text-on-tertiary-container rounded-lg text-body-sm text-center font-medium"
+            id="form-feedback"
+          >
+            ✓ ¡Mensaje recibido con éxito! Un asesor farmacéutico te contactará vía WhatsApp en breves minutos.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('b2b-quote-form') as HTMLFormElement | null;
+  const feedback = document.getElementById('form-feedback');
+
+  if (form && feedback) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      feedback.classList.remove('hidden');
+      form.reset();
+      setTimeout(() => {
+        feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    });
+  }
+</script>

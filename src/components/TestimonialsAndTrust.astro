@@ -1,0 +1,99 @@
+---
+// src/components/TestimonialsAndTrust.astro
+const testimonials = [
+  {
+    initials: 'QF',
+    name: 'Q.F. Marilú Chumpitaz',
+    role: 'Botica San Judas Tadeo • Lima Norte',
+    comment:
+      '"Trabajar con Grupo Dialex transformó la rotación de mi botica en Los Olivos. Siempre tienen stock de antibióticos y analgésicos de marcas de confianza, y los certificados BPA están al día para cualquier inspección de DIRIS."',
+  },
+  {
+    initials: 'EG',
+    name: 'Lic. Eduardo Gutiérrez',
+    role: 'Farmacia La Merced • Junín',
+    comment:
+      '"Pido para Huancayo y la mercadería llega en perfecto estado con precinto de seguridad. Los precios mayoristas me permiten competir tranquilamente con las grandes cadenas."',
+  },
+];
+
+const alliedLabs = ['PORTUGAL', 'MEDIFARMA', 'BAGÓ', 'GENFAR', 'IQFARMA'];
+---
+
+<section class="w-full bg-surface-container-low py-space-3xl">
+  <div class="max-w-7xl mx-auto px-container-padding-desktop">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+      <!-- Testimonials and Client Trust -->
+      <div class="lg:col-span-8 flex flex-col gap-space-lg">
+        <div>
+          <span class="text-label-md uppercase tracking-wider text-primary font-bold">Testimonios de Clientes</span>
+          <h2 class="text-headline-xl text-on-surface tracking-tight font-bold mt-space-2xs">
+            La confianza de los dueños de boticas en todo el país
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+          {testimonials.map((item) => (
+            <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between border border-surface-container-high/40">
+              <div>
+                <div class="flex items-center gap-1 text-tertiary mb-space-xs">
+                  {[...Array(5)].map(() => (
+                    <span class="material-symbols-outlined text-[18px]">star</span>
+                  ))}
+                </div>
+                <p class="text-body-md text-on-surface-variant italic leading-relaxed">
+                  {item.comment}
+                </p>
+              </div>
+              <div class="mt-space-md flex items-center gap-space-sm pt-space-xs">
+                <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary shrink-0">
+                  {item.initials}
+                </div>
+                <div>
+                  <h4 class="text-label-lg font-bold text-on-surface">{item.name}</h4>
+                  <p class="text-body-sm text-on-surface-variant">{item.role}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Laboratories Logos Micro Strip -->
+        <div class="pt-space-xs">
+          <span class="text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">
+            Laboratorios y Marcas Aliadas Distribuidas:
+          </span>
+          <div class="flex flex-wrap items-center gap-space-lg mt-space-xs opacity-80">
+            {alliedLabs.map((lab) => (
+              <span class="text-headline-sm text-secondary tracking-wider font-extrabold hover:text-primary transition-colors">
+                {lab}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Mascot 'Dialexito' Feature Card -->
+      <div class="lg:col-span-4">
+        <div class="p-space-xl rounded-2xl bg-gradient-to-br from-surface-container-lowest to-surface-container shadow-md flex flex-col items-center text-center relative overflow-hidden border border-surface-container-high/40">
+          <div class="size-34 overflow-hidden rounded-full bg-primary/10 flex items-center justify-center text-primary mb-space-md relative">
+            <img src="/images/dialexito.png" class="h-30 object-contain" alt="">
+          </div>
+          <h3 class="text-headline-md font-bold text-on-surface mt-1">Conoce a "Dialexito"</h3>
+          <p class="text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+            Nuestra mascota institucional simboliza la calidez humana, la agilidad en la entrega y el resguardo de la salud que Grupo Dialex lleva a cada rincón del Perú.
+          </p>
+          <div class="w-full bg-surface-container-lowest p-space-sm rounded-xl mt-space-md shadow-sm text-left border border-surface-container-high/30">
+            <div class="flex items-center gap-space-xs text-primary text-label-md font-bold mb-1">
+              <span class="material-symbols-outlined text-[18px]">verified</span>
+              <span>Compromiso Dialex</span>
+            </div>
+            <p class="text-body-sm text-on-surface-variant leading-relaxed">
+              "Ningún pedido sale de droguería sin antes ser revisado minuciosamente por nuestro control de calidad."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

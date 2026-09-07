@@ -1,0 +1,126 @@
+---
+// src/components/ProductCategories.astro
+const categories = [
+  {
+    tag: 'Medicamentos',
+    title: 'Genéricos & Éticos',
+    description: 'Paracetamol, Ibuprofeno, Amoxicilina, Omeprazol, Losartán y más.',
+    count: '+650 Productos',
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDIGd-ScUx8yUyrT76rwpzGw3WdZMH7zuMITbL_QcEOgNaMjS18flgqdHagyUCLeoV3FlzvbgQeh5ZIi03M41Ua6ux1PjD4DGl3RX_BcPPN2t8ZYIb0yOTwvp2jv7G9MTRu0edCzqVZ81WZvucbDOGpAHN6JylfE_bVyHcZOQcMpOffZpwnQEuzNs6ayV29tpJWPV3pxyvWjGDSnJ_aEH5pV-j5WO0Kwye_ndOhQ7hb2s24TvsUAXWAbg',
+    imageAlt: 'Surtido de medicamentos genéricos y éticos en blisters y tabletas para farmacia',
+  },
+  {
+    tag: 'Terapéutica',
+    title: 'Salud Respiratoria',
+    description: 'Jarabes expectorantes, broncodilatadores, antihistamínicos y antigripales.',
+    count: '+320 Productos',
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDA0VbFCWudLE7jtsVpoKeq819s4rx-DzzqTeaIPFivgVtWS4W-gg7AAc2PQYQsurvavLNCiiewx_lGrfwc7eMAY_ebs4SA_J9XiFt44IZiO8oK7Las111qwkD7ZvGKkQpacok40nzVcMfZBoSGH986FxZCYwGUA1dNhNtnt9irPzc1NE3yFvVGNuIy5PQ5QoCHlfdVNiUm78OsM1ik17jyIllI3BXqN9uVVq5d96hWDj2FO2iDPHhYaA',
+    imageAlt: 'Jarabes para la tos, inhaladores y tratamientos respiratorios farmacéuticos',
+  },
+  {
+    tag: 'Pediatría',
+    title: 'Materno e Infantil',
+    description: 'Fórmulas, gotas pediátricas, cremas antiescaldaduras y cuidado para el recién nacido.',
+    count: '+210 Productos',
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuCu4cnp1VvrU7YGefEloNcGwwQI02ZQQU4jydB2hZarRWR9umDnVXoJ7XKrpJOBLoP1Sy7T3X1xVVCquZMhctTBf2_hq7kjnHMXKTi7JlEAV9XkpStxwCcFC-BmlSEoN_nUKjDdyJeHQkvdxeXQq5q8PpBZf1eOTvv7KEf9AnSmYklT7mgq7EWb1R8vdQSkTy7R_ZyVWYJAzX-v_gh4cQk7u38bKCDMhiagciendmBC8-VK1sT6SU_Ejg',
+    imageAlt: 'Gotas pediátricas, fórmulas infantiles y cremas para cuidado de bebés',
+  },
+  {
+    tag: 'Bienestar',
+    title: 'Cuidado e Higiene',
+    description: 'Antisépticos, jabones medicinales, protectores solares y cuidado bucal.',
+    count: '+280 Productos',
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuD041h7f5DWMJ9e_JQjHybNCv9kWnoLJjuMnK_-FvuQtdiHo_p1CUHn4KjpYEKkjTbsKOWu49zW6spKv0jTUuWZcoVSU_ZWwm8IEda__--vnEV5j2e-ZDS5EXs1LrOMJeoC64XV3OuGMpbe9c-uh5Pk2Jo-YNPHqP-33nnvKrpkiWBnVEL_v0YjnAqSE2krttLp_T3r5looQ3ra05GbIEjoSfTCIRGhpVpy25h-EMKctrhRe15R6grlew',
+    imageAlt: 'Productos de higiene personal, antisépticos y cuidado dermatológico',
+  },
+  {
+    tag: 'Clínico',
+    title: 'Insumos & Descartables',
+    description: 'Jeringas estériles, gasas, guantes quirúrgicos, cánulas y tensiómetros.',
+    count: '+340 Productos',
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDFPfFw5KOYzg1e13dILNFElfyxk4LdBZpckPK5kdHL9TO76LZN0xUp9JNy1AuePfjDgxcTvxfvA50Dbn3KD-pR9aHXb4VmNZlOS8q8ls63uIIKEnOHGQtiaQ1xhYm7SNlWZyyQQiGS300Rr21AHEgb--tnB4bAO0zRoDx5FNP2d-eOHwgFUEfJqa_3PsUpx6ZrUQghzGSIXHywAH1ywtpD2IizanBjKMZkouUivKHSP8XnJBTNj6epGw',
+    imageAlt: 'Material médico estéril, jeringas y guantes quirúrgicos para clínicas y boticas',
+  },
+];
+---
+
+<section class="w-full bg-surface-container-low py-space-3xl" id="catalogo">
+  <div class="max-w-7xl mx-auto px-container-padding-desktop">
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-space-2xl">
+      <span class="text-label-md uppercase tracking-wider text-primary font-bold">Portafolio Farmacéutico Completo</span>
+      <h2 class="text-headline-xl text-on-surface tracking-tight font-bold mt-space-2xs">
+        Categorías de Productos más Solicitados
+      </h2>
+      <p class="text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+        Comercializamos líneas éticas, genéricos intercambiables y suministros de los principales laboratorios nacionales e internacionales.
+      </p>
+    </div>
+
+    <!-- 5-Category Bento Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-space-md">
+      {categories.map((cat) => (
+        <a
+          href="#cotizacion-b2b"
+          class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group border border-surface-container-high/40"
+        >
+          <div>
+            <div class="h-32 w-full rounded-xl overflow-hidden mb-space-sm bg-surface-container">
+              <img
+                src={cat.image}
+                alt={cat.imageAlt}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                referrerpolicy="no-referrer"
+              />
+            </div>
+            <span class="text-label-sm text-primary font-bold uppercase">{cat.tag}</span>
+            <h3 class="text-headline-sm font-bold text-on-surface mt-1 leading-snug">{cat.title}</h3>
+            <p class="text-body-sm text-on-surface-variant mt-1 leading-relaxed">{cat.description}</p>
+          </div>
+          <div class="mt-space-md flex items-center justify-between text-label-sm text-primary font-bold">
+            <span>{cat.count}</span>
+            <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Interactive Wholesale Catalog Banner -->
+    <div class="mt-space-xl p-space-xl rounded-2xl bg-gradient-to-r from-inverse-surface via-primary to-primary-container text-on-primary flex flex-col lg:flex-row items-center justify-between gap-space-lg shadow-lg">
+      <div class="flex items-center gap-space-md">
+        <div class="w-14 h-14 rounded-2xl bg-surface-container-lowest/10 backdrop-blur-md flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-[32px] text-inverse-primary">download</span>
+        </div>
+        <div>
+          <h3 class="text-headline-md font-bold leading-tight">¿Buscas abastecer tu farmacia hoy mismo?</h3>
+          <p class="text-body-md text-surface-container-highest/90 mt-1 max-w-xl leading-relaxed">
+            Descarga nuestro Catálogo Mayorista en formato PDF con especificaciones, presentaciones por caja y vigencia de lote o cotiza en línea al instante.
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-space-sm shrink-0 w-full sm:w-auto">
+        <a
+          href="https://wa.me/51984210330?text=Hola%20Dialex,%20deseo%20descargar%20el%20catalogo%20mayorista%20actualizado"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-space-xs bg-surface-container-lowest text-primary hover:bg-surface-container px-space-lg py-3 rounded-lg text-label-lg font-bold transition-colors shadow-sm w-full sm:w-auto"
+        >
+          <span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+          <span>Descargar Catálogo (PDF)</span>
+        </a>
+        <a
+          href="#cotizacion-b2b"
+          class="inline-flex items-center justify-center gap-space-xs bg-tertiary text-on-tertiary hover:bg-tertiary-container px-space-md py-3 rounded-lg text-label-lg font-bold transition-colors shadow-sm w-full sm:w-auto"
+        >
+          <span class="material-symbols-outlined text-[20px]">shopping_cart_checkout</span>
+          <span>Comprar al Por Mayor</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

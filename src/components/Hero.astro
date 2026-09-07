@@ -1,0 +1,158 @@
+---
+// src/components/Hero.astro
+---
+
+<div class="relative w-full overflow-hidden" id="inicio">
+  <!-- Top Ambient Glow Backdrop -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-primary-fixed/30 via-surface-container/20 to-transparent pointer-events-none blur-3xl"></div>
+
+  <!-- Hero Section -->
+  <section class="relative max-w-7xl mx-auto px-container-padding-desktop pt-space-xl pb-space-3xl">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+      <!-- Left Content Column -->
+      <div class="lg:col-span-7 flex flex-col items-start gap-space-md">
+        <!-- Main Title -->
+        <h1 class="text-headline-xl text-on-surface tracking-tight leading-tight">
+          Tu socio estratégico en <span class="text-primary">distribución farmacéutica</span> garantizada
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+          Abastecemos a boticas, farmacias y centros de salud en todo el Perú con medicamentos certificados, alta rotación comercial y logística con trazabilidad total bajo certificación DIGEMID.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap items-center gap-space-md pt-space-xs w-full sm:w-auto">
+          <a
+            href="#cotizacion-b2b"
+            class="inline-flex items-center justify-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary px-space-lg py-3 rounded-lg text-label-lg font-bold transition-all shadow-md hover:shadow-lg"
+          >
+            <span class="material-symbols-outlined text-[20px]">request_quote</span>
+            <span>Solicitar Cotización Mayorista</span>
+          </a>
+          <a
+            href="https://wa.me/51984210330?text=Hola%20Grupo%20Dialex,%20deseo%20solicitar%20la%20lista%20de%20precios%20mayoristas%20para%20mi%20botica"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-space-xs bg-tertiary hover:bg-tertiary-container text-on-tertiary px-space-lg py-3 rounded-lg text-label-lg font-bold transition-all shadow-sm hover:shadow-md"
+          >
+            <span class="material-symbols-outlined text-[20px]">chat</span>
+            <span>Hablar por WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Micro Confidence Indicators -->
+        <div class="flex flex-wrap items-center gap-space-md pt-space-sm text-label-sm text-on-surface-variant font-medium">
+          <span class="flex items-center gap-1">
+            <span class="material-symbols-outlined text-tertiary text-[16px]">verified</span>
+            Precios con IGV transparente
+          </span>
+          <span class="flex items-center gap-1">
+            <span class="material-symbols-outlined text-primary text-[16px]">local_shipping</span>
+            Despachos a Lima y Provincias
+          </span>
+          <span class="flex items-center gap-1">
+            <span class="material-symbols-outlined text-primary text-[16px]">verified_user</span>
+            R.D. DIGEMID N° 4892-2022
+          </span>
+        </div>
+      </div>
+
+      <!-- Right Visual Column / Bento Composition -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative rounded-2xl overflow-hidden bg-surface-container-lowest shadow-xl">
+          <div class="relative h-80 w-full overflow-hidden">
+            <img
+              alt="Almacén de distribución farmacéutica climatizado de Grupo Dialex con control estricto de temperatura y estanterías certificadas BPA"
+              class="w-full h-full object-cover object-center"
+              referrerpolicy="no-referrer"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMWOgkyWvmMYuSYAZRYJ4lCebgcZnUKtiGK4IKM3Kc6-e_J-tofqcgvtJYvZ1mPNjJ1QRNrIAZg1VK2ljyz1rVw32ED6qZdJA65jaT1Np5y7WqBpROKZUkP35Keum6oMWxdJXyHjpZ_MACDchubLFCAzxpWD0z8ZemL9Ho51t2n5t8vmo7wMDEFJQYxhA82Iz7TY5ZuV3oNOOv_O0JiYvoPSjYeZUaamS_8HT2WYlOmQwqS7dEOC-7nw"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/40 to-transparent"></div>
+
+            <!-- Floating Live Dispatch Alert -->
+            <div class="absolute top-4 right-4 bg-surface/95 backdrop-blur-md px-space-sm py-1.5 rounded-lg shadow-sm flex items-center gap-2">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary"></span>
+              </span>
+              <span class="text-label-sm font-semibold text-on-surface">Envíos Activos Hoy</span>
+            </div>
+
+            <!-- In-image Title Tag -->
+            <div class="absolute bottom-4 left-4 right-4 text-on-primary">
+              <div class="flex items-center gap-1.5 text-primary-fixed text-label-sm uppercase tracking-wider mb-1 font-semibold">
+                <span class="material-symbols-outlined text-[16px]">inventory_2</span>
+                Centro de Distribución Principal
+              </div>
+              <p class="text-headline-sm leading-tight text-surface-container-lowest font-semibold">
+                Cadena de Frío y Control Climatizado 15°C - 25°C
+              </p>
+            </div>
+          </div>
+
+          <!-- Overlapping Trust Metrics Bento Strip -->
+          <div class="p-space-md bg-surface-container-low grid grid-cols-2 gap-space-sm">
+            <div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-center">
+              <div class="flex items-center gap-1 text-primary">
+                <span class="material-symbols-outlined text-[20px]">storefront</span>
+                <span class="text-headline-md font-bold">+300</span>
+              </div>
+              <span class="text-label-sm text-on-surface-variant mt-0.5 font-medium">Boticas & Farmacias Aliadas</span>
+            </div>
+            <div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-center">
+              <div class="flex items-center gap-1 text-tertiary">
+                <span class="material-symbols-outlined text-[20px]">verified</span>
+                <span class="text-headline-md font-bold">100%</span>
+              </div>
+              <span class="text-label-sm text-on-surface-variant mt-0.5 font-medium">Trazabilidad de Lotes DIGEMID</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Metrics Ribbon Below Hero -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-space-md mt-space-2xl pt-space-md">
+      <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-sm border border-surface-container-high/40">
+        <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+          <span class="material-symbols-outlined text-[22px]">verified</span>
+        </div>
+        <div>
+          <p class="text-headline-sm text-on-surface font-bold leading-none">DIGEMID</p>
+          <p class="text-label-sm text-on-surface-variant mt-1">BPA & BPDT Vigentes</p>
+        </div>
+      </div>
+
+      <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-sm border border-surface-container-high/40">
+        <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+          <span class="material-symbols-outlined text-[22px]">schedule</span>
+        </div>
+        <div>
+          <p class="text-headline-sm text-on-surface font-bold leading-none">24 - 48 hrs</p>
+          <p class="text-label-sm text-on-surface-variant mt-1">Despacho Lima & Provincias</p>
+        </div>
+      </div>
+
+      <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-sm border border-surface-container-high/40">
+        <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+          <span class="material-symbols-outlined text-[22px]">medical_services</span>
+        </div>
+        <div>
+          <p class="text-headline-sm text-on-surface font-bold leading-none">+1,800</p>
+          <p class="text-label-sm text-on-surface-variant mt-1">SKUs Médicos Disponibles</p>
+        </div>
+      </div>
+
+      <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-sm border border-surface-container-high/40">
+        <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-tertiary shrink-0">
+          <span class="material-symbols-outlined text-[22px]">trending_up</span>
+        </div>
+        <div>
+          <p class="text-headline-sm text-on-surface font-bold leading-none">Alta Rotación</p>
+          <p class="text-label-sm text-on-surface-variant mt-1">Márgenes para Farmacias</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

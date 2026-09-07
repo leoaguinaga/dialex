@@ -1,0 +1,103 @@
+---
+// src/components/Footer.astro
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="w-full bg-surface-container-lowest shadow-[0_-1px_12px_rgba(11,28,48,0.04)] pt-space-3xl pb-space-2xl border-t border-surface-container-high/40" id="contacto">
+  <div class="max-w-7xl mx-auto px-container-padding-desktop">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-2xl border-b border-surface-container-high/30">
+      <!-- Company Info (2 cols) -->
+      <div class="lg:col-span-2 flex flex-col gap-space-md">
+        <a href="#inicio" class="flex items-center gap-space-sm group">
+          <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary group-hover:bg-primary-container transition-colors">
+            <span class="material-symbols-outlined text-[24px]">local_pharmacy</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-headline-sm font-bold text-primary tracking-tight leading-none group-hover:text-primary-container transition-colors">GRUPO DIALEX</span>
+            <span class="text-label-sm text-on-surface-variant uppercase tracking-widest mt-1">Droguería Especializada B2B</span>
+          </div>
+        </a>
+        <p class="text-body-md text-on-surface-variant max-w-sm leading-relaxed">
+          Líderes peruanos en provisión, logística y distribución mayorista de especialidades farmacéuticas, insumos médicos y genéricos certificados para boticas y cadenas de salud independientes.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div class="flex flex-col gap-space-sm">
+        <h4 class="text-label-lg text-on-surface uppercase tracking-wider font-bold">Navegación</h4>
+        <ul class="flex flex-col gap-space-xs text-body-md text-on-surface-variant">
+          <li class="py-0.5">
+            <a class="hover:text-primary transition-colors" href="#inicio">Inicio</a>
+          </li>
+          <li class="py-0.5">
+            <a class="hover:text-primary transition-colors" href="#nosotros">Quiénes Somos</a>
+          </li>
+          <li class="py-0.5">
+            <a class="hover:text-primary transition-colors" href="#catalogo">Líneas Farmacéuticas</a>
+          </li>
+          <li class="py-0.5">
+            <a class="hover:text-primary transition-colors" href="#certificaciones">BPA / BPDT Auditadas</a>
+          </li>
+          <li class="py-0.5">
+            <a class="hover:text-primary transition-colors" href="#contacto">Trabaja con Nosotros</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- B2B Services -->
+      <div class="flex flex-col gap-space-sm">
+        <h4 class="text-label-lg text-on-surface uppercase tracking-wider font-bold">Servicios B2B</h4>
+        <ul class="flex flex-col gap-space-xs text-body-md text-on-surface-variant">
+          <li class="py-0.5">
+            <a class="hover:text-primary transition-colors" href="#cotizacion-b2b">Portal de Boticas</a>
+          </li>
+          <li class="py-0.5">
+            <a
+              class="hover:text-primary transition-colors inline-flex items-center gap-1"
+              href="https://wa.me/51984210330?text=Hola%20Grupo%20Dialex,%20deseo%20hacer%20un%20pedido%20B2B"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Atención por WhatsApp
+            </a>
+          </li>
+          <li class="py-0.5">
+            <a class="hover:text-primary transition-colors" href="#inicio">Rutas &amp; Despacho Lima/Provincias</a>
+          </li>
+          <li class="py-0.5">
+            <a class="hover:text-primary transition-colors" href="#certificaciones">Descarga de Registros Sanitarios</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact & Headquarters -->
+      <div class="flex flex-col gap-space-sm">
+        <h4 class="text-label-lg text-on-surface uppercase tracking-wider font-bold">Contacto &amp; Sede</h4>
+        <div class="flex flex-col gap-space-xs text-body-md text-on-surface-variant">
+          <div class="flex items-start gap-space-xs">
+            <span class="material-symbols-outlined text-[18px] text-primary mt-0.5 shrink-0">location_on</span>
+            <span>Av. Materiales 3045, Parque Industrial Cercado de Lima, Lima - Perú</span>
+          </div>
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[18px] text-primary shrink-0">mail</span>
+            <a href="mailto:ventas@grupodialex.com.pe" class="hover:text-primary transition-colors">ventas@grupodialex.com.pe</a>
+          </div>
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[18px] text-primary shrink-0">phone</span>
+            <span>(01) 748-3900 / (01) 748-3901</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright & Policies -->
+    <div class="pt-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant text-body-sm">
+      <p>© {currentYear} Grupo Dialex S.A.C. RUC: 20603847291. Todos los derechos reservados.</p>
+      <div class="flex flex-wrap items-center gap-space-lg text-body-sm">
+        <a class="hover:text-primary transition-colors" href="#inicio">Términos y Condiciones</a>
+        <a class="hover:text-primary transition-colors" href="#inicio">Política de Privacidad</a>
+        <a class="hover:text-primary transition-colors" href="#certificaciones">Normativa DIGEMID</a>
+      </div>
+    </div>
+  </div>
+</footer>

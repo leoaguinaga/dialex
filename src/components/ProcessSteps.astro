@@ -1,0 +1,78 @@
+---
+// src/components/ProcessSteps.astro
+const steps = [
+  {
+    step: '01',
+    title: 'Envíanos tu Lista',
+    description:
+      'Remítenos tu requerimiento en Excel, foto de receta de mostrador o texto directo por WhatsApp o formulario.',
+    icon: 'send',
+    highlight: 'WhatsApp o Web',
+    isTertiary: false,
+  },
+  {
+    step: '02',
+    title: 'Cotización Inmediata',
+    description:
+      'Tu ejecutivo asignado te envía la proforma con precios mayoristas, descuentos por escala y stock confirmado.',
+    icon: 'timer',
+    highlight: 'En menos de 30 minutos',
+    isTertiary: false,
+  },
+  {
+    step: '03',
+    title: 'Picking Normado BPA',
+    description:
+      'Validación de lotes, fecha de caducidad óptima y embalaje térmico certificado en nuestro almacén central.',
+    icon: 'verified',
+    highlight: 'Control de Calidad',
+    isTertiary: true,
+  },
+  {
+    step: '04',
+    title: 'Despacho en Puerta',
+    description:
+      'Entrega directa en la dirección de tu botica en Lima o entrega monitoreada en la agencia para provincias.',
+    icon: 'task_alt',
+    highlight: 'Entrega Conforme',
+    isTertiary: false,
+  },
+];
+---
+
+<section class="max-w-7xl mx-auto px-container-padding-desktop py-space-3xl">
+  <div class="text-center max-w-2xl mx-auto mb-space-2xl">
+    <span class="text-label-md uppercase tracking-wider text-primary font-bold">Operativa Ágil B2B</span>
+    <h2 class="text-headline-xl text-on-surface tracking-tight font-bold mt-space-2xs">
+      Proceso Rápido de Compra en 4 Pasos
+    </h2>
+    <p class="text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+      Sin trámites engorrosos. Diseñado para que tu mostrador nunca se quede sin medicamentos esenciales.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+    {steps.map((item) => (
+      <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between border border-surface-container-high/40 hover:shadow-md transition-shadow">
+        <span class="text-headline-xl text-surface-variant font-extrabold leading-none">
+          {item.step}
+        </span>
+        <div class="my-space-sm">
+          <h3 class="text-headline-sm font-bold text-on-surface mb-space-xs">
+            {item.title}
+          </h3>
+          <p class="text-body-md text-on-surface-variant leading-relaxed">
+            {item.description}
+          </p>
+        </div>
+        <div class:list={[
+          'flex items-center gap-1 text-label-sm font-bold',
+          item.isTertiary ? 'text-tertiary' : 'text-primary'
+        ]}>
+          <span class="material-symbols-outlined text-[16px]">{item.icon}</span>
+          <span>{item.highlight}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
