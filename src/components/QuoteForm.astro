@@ -2,8 +2,9 @@
 // src/components/QuoteForm.astro
 ---
 
-<section class="max-w-7xl mx-auto px-container-padding-desktop py-space-3xl" id="cotizacion-b2b">
-  <div class="rounded-3xl bg-gradient-to-br from-inverse-surface via-primary to-primary-container p-space-xl lg:p-space-3xl text-on-primary shadow-xl">
+<section class="max-w-7xl mx-auto px-container-padding-mobile sm:px-container-padding-desktop py-space-3xl scroll-mt-28" id="contacto">
+  <div id="cotizacion-b2b" class="scroll-mt-28"></div>
+  <div class="rounded-3xl bg-gradient-to-br from-inverse-surface via-primary to-primary-container p-space-md sm:p-space-xl lg:p-space-3xl text-on-primary shadow-xl">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
       <!-- Left Column: Copy & Direct Hotline -->
       <div class="lg:col-span-6 flex flex-col gap-space-md">
@@ -42,7 +43,7 @@
       </div>
 
       <!-- Right Column: B2B Quick Quote Form -->
-      <div class="lg:col-span-6 bg-surface-container-lowest rounded-2xl p-space-xl text-on-surface shadow-lg">
+      <div class="lg:col-span-6 bg-surface-container-lowest rounded-2xl p-space-md sm:p-space-xl text-on-surface shadow-lg">
         <h3 class="text-headline-sm font-bold text-on-surface mb-1">Solicita tu Cotización B2B</h3>
         <p class="text-body-sm text-on-surface-variant mb-space-md">Acceso directo a listas mayoristas con RUC.</p>
 
@@ -135,6 +136,8 @@
           <div
             class="hidden p-space-sm bg-tertiary-container text-on-tertiary-container rounded-lg text-body-sm text-center font-medium"
             id="form-feedback"
+            role="status"
+            aria-live="polite"
           >
             ✓ ¡Mensaje recibido con éxito! Un asesor farmacéutico te contactará vía WhatsApp en breves minutos.
           </div>

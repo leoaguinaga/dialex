@@ -2,7 +2,7 @@
 // src/components/Hero.astro
 ---
 
-<div class="relative w-full overflow-hidden" id="inicio">
+<div class="relative w-full overflow-hidden scroll-mt-32" id="inicio">
   <!-- Top Ambient Glow Backdrop -->
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-primary-fixed/30 via-surface-container/20 to-transparent pointer-events-none blur-3xl"></div>
 
@@ -114,8 +114,8 @@
 
     <!-- Quick Metrics Ribbon Below Hero -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-space-md mt-space-2xl pt-space-md">
-      <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-sm border border-surface-container-high/40">
-        <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+      <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-sm border border-surface-container-high/40 flex-col md:flex-row text-center md:text-left">
+        <div class="w-10 h-10 rounded-lg bg-surface-container flex flex-col md:flex-row items-center justify-center text-primary shrink-0">
           <span class="material-symbols-outlined text-[22px]">verified</span>
         </div>
         <div>
@@ -124,8 +124,8 @@
         </div>
       </div>
 
-      <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-sm border border-surface-container-high/40">
-        <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+      <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-sm border border-surface-container-high/40 text-center md:text-left flex-col md:flex-row ">
+        <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0 flex-col md:flex-row ">
           <span class="material-symbols-outlined text-[22px]">schedule</span>
         </div>
         <div>
@@ -134,7 +134,7 @@
         </div>
       </div>
 
-      <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-sm border border-surface-container-high/40">
+      <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-sm border border-surface-container-high/40 text-center md:text-left flex-col md:flex-row">
         <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
           <span class="material-symbols-outlined text-[22px]">medical_services</span>
         </div>
@@ -144,7 +144,7 @@
         </div>
       </div>
 
-      <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-sm border border-surface-container-high/40">
+      <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-sm border border-surface-container-high/40 text-center md:text-left flex-col md:flex-row">
         <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-tertiary shrink-0">
           <span class="material-symbols-outlined text-[22px]">trending_up</span>
         </div>
