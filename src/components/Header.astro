@@ -1,8 +1,7 @@
 ---
-// src/components/Header.astro
 const navLinks = [
   { label: "Inicio", href: "#inicio", active: true },
-  { label: "Certificaciones (BPA/BPDT)", href: "#certificaciones" },
+  { label: "Certificaciones", href: "#certificaciones" },
   { label: "Nosotros", href: "#nosotros" },
   { label: "Catálogo Farmacéutico", href: "#catalogo" },
   { label: "Trabaja con Nosotros", href: "#contacto" },
@@ -67,10 +66,10 @@ const navLinks = [
             <a
               href={link.href}
               class:list={[
-                "nav-link-desktop py-space-xs transition-colors",
+                "nav-link-desktop py-space-xs transition-colors font-semibold",
                 link.active
-                  ? "text-primary font-bold"
-                  : "text-label-lg text-on-surface-variant hover:text-primary font-medium",
+                  ? "text-primary"
+                  : "text-on-surface-variant hover:text-primary",
               ]}
               aria-current={link.active ? "page" : undefined}
             >
@@ -203,12 +202,12 @@ const navLinks = [
       const href = link.getAttribute("href");
       const isCurrent = href === `#${activeId}`;
       if (isCurrent) {
-        link.classList.add("text-primary", "font-bold");
-        link.classList.remove("text-label-lg", "text-on-surface-variant", "font-medium");
+        link.classList.add("text-primary");
+        link.classList.remove("text-on-surface-variant");
         link.setAttribute("aria-current", "page");
       } else {
-        link.classList.remove("text-primary", "font-bold");
-        link.classList.add("text-label-lg", "text-on-surface-variant", "font-medium");
+        link.classList.remove("text-primary");
+        link.classList.add("text-on-surface-variant");
         link.removeAttribute("aria-current");
       }
     });
